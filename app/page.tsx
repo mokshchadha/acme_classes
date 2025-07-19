@@ -339,10 +339,10 @@ export default function Home(): JSX.Element {
               
               {/* Social Links */}
               <div className="flex space-x-4">
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110">
+                <a href="https://www.youtube.com/@ACMECoachingClasses" target="_blank" rel="noopener noreferrer" className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110">
                   <YoutubeIcon className="w-6 h-6" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110">
+                <a href="https://www.linkedin.com/in/acme-coaching-classes-190b04375" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110">
                   <LinkedinIcon className="w-6 h-6" />
                 </a>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-blue-800 hover:bg-blue-900 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110">
