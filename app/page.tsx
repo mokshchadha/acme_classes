@@ -283,7 +283,7 @@ export default function Home(): JSX.Element {
               <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
                 <BookOpenIcon className="text-white w-6 h-6" />
               </div>
-              <span className="text-2xl font-bold text-blue-600">Acme Coaching</span>
+              <span className="text-2xl font-bold text-blue-600">Acme Coaching Classes</span>
             </div>
             
             {/* Desktop Menu */}
@@ -331,7 +331,7 @@ export default function Home(): JSX.Element {
             >
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
                 Shape Your <span className="text-blue-600">Future</span> with
-                <span className="text-orange-500 block">Acme Coaching</span>
+                <span className="text-orange-500 block">Acme Classes</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Excellence in NEET, JEE, NDA & Foundation courses. Join thousands of successful students who achieved their dreams with us.
