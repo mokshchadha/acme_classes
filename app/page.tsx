@@ -113,13 +113,13 @@ interface Testimonial {
   thumbnail: string;
 }
 
-interface FormData {
-  name: string;
-  phone: string;
-  email: string;
-  course: string;
-  message: string;
-}
+// interface FormData {
+//   name: string;
+//   phone: string;
+//   email: string;
+//   course: string;
+//   message: string;
+// }
 
 interface VisibilityState {
   [key: string]: boolean;
@@ -421,7 +421,7 @@ export default function Home(): JSX.Element {
           >
             <h2 className="text-4xl font-bold mb-6">Our Outstanding Results</h2>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Numbers speak louder than words. Here's what we've achieved together with our dedicated students.
+              Numbers speak louder than words. Here is what we have achieved together with our dedicated students.
             </p>
           </motion.div>
 
