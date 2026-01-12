@@ -1,0 +1,10 @@
+// Section exports
+export { Navbar } from './Navbar'
+export { Hero } from './Hero'
+export { About } from './About'
+export { Results } from './Results'
+export { FoundersMessage } from './FoundersMessage'
+export { Team } from './Team'
+export { Testimonials } from './Testimonials'
+export { Contact } from './Contact'
+export { Footer } from './Footer'
