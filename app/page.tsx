@@ -388,8 +388,10 @@ export default function Home(): JSX.Element {
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">About Acme Coaching Classes</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              At Acme Coaching Classes, we believe in transforming dreams into reality. With over a decade of excellence in competitive exam preparation, we have established ourselves as the premier coaching institute in Hamirpur, Himachal Pradesh. Our dedicated team of expert faculty members, innovative teaching methodologies, and personalized attention to each student has helped thousands achieve their goals in NEET, JEE, NDA, and Foundation courses.
-            </p>
+             ACME Coaching Classes was established in 2004 by its founder Rajeev Chauhan, with a clear vision to provide high-quality, concept-driven education for competitive and board examinations. Since its inception, ACME has consistently delivered strong academic results and built a reputation for disciplined teaching and academic excellence.
+
+Over the years, ACME students have successfully secured selections in AIIMS, NEET, IITs, NITs, IISER, NISER, and BITS, reflecting the institute’s focused preparation strategy and rigorous academic standards.
+                         </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -448,6 +450,31 @@ export default function Home(): JSX.Element {
         </div>
       </section>
 
+      {/* Founder's Message Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            animate={isVisible.team ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">Message from Our Founder</h2>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xl text-gray-700 leading-relaxed mb-8 italic border-l-4 border-blue-600 pl-8 py-6 bg-white/70 rounded-r-xl shadow-lg">
+                &ldquo;ACME Coaching Classes does not focus solely on creating doctors and engineers; it is equally committed to shaping responsible, ethical, and compassionate human beings. Along with academic excellence, we emphasize values such as discipline, integrity, social responsibility, and respect for the nation. Our objective is to develop individuals who contribute positively to society, uphold moral character, and use their knowledge for the betterment of the country. At ACME, success is defined not only by professional achievement but by the quality of character and service to society and the nation.&rdquo;
+              </p>
+              <p className="text-xl text-gray-800 font-bold text-right mb-1">
+                — Rajeev Chauhan
+              </p>
+              <p className="text-base text-gray-600 text-right">
+                Founder, ACME Coaching Classes
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section id="team" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -459,7 +486,7 @@ export default function Home(): JSX.Element {
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Meet Our Expert Team</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our experienced faculty members are the backbone of our success, bringing years of expertise and dedication to student achievement.
+              Our dedicated faculty members bring years of experience and expertise to guide you towards success.
             </p>
           </motion.div>
 
