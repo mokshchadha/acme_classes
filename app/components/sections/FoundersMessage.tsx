@@ -12,7 +12,7 @@ export const FoundersMessage = ({ isVisible }: FoundersMessageProps) => {
         <div>
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Message from Our Founder</h2>
           <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row items-start gap-8">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
               {/* Founder Image and Info */}
               <div className="flex-shrink-0 text-center md:text-left">
                 <Image 
