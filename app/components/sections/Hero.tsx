@@ -36,7 +36,14 @@ export const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">Enroll Now</button>
-              <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">Download Brochure</button>
+              <a 
+                href="https://drive.google.com/file/d/18ywLwQ_TZGLSsCgqJm6WHVXSV-RBJQcL/view?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-block text-center"
+              >
+                Download Brochure
+              </a>
             </div>
           </motion.div>
 

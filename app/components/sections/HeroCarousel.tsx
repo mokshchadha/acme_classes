@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { YoutubeIcon, LinkedinIcon, FacebookIcon, ChevronLeftIcon, ChevronRightIcon } from '../icons'
+import { EnquireModal } from '../EnquireModal'
 
 const slides = [
   {
@@ -46,6 +47,7 @@ const slides = [
 export const HeroCarousel = () => {
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(0)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -127,13 +129,22 @@ export const HeroCarousel = () => {
                   transition={{ delay: 0.4 }}
                   className="flex flex-wrap gap-4"
                 >
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25">
+                  <button 
+                    onClick={() => setIsModalOpen(true)}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25"
+                  >
                     Enquire Now
                   </button>
-                  <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold transition-all duration-300">
+                  <a 
+                    href="https://drive.google.com/file/d/18ywLwQ_TZGLSsCgqJm6WHVXSV-RBJQcL/view?usp=sharing" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold transition-all duration-300 inline-block"
+                  >
                     Get Brochure
-                  </button>
+                  </a>
                 </motion.div>
+                <EnquireModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
                 {/* Social Links */}
                 <motion.div 
