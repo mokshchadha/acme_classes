@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { MenuIcon, XIcon, BookOpenIcon } from '../icons'
 
 interface NavbarProps {
@@ -7,11 +8,35 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ isMenuOpen, setIsMenuOpen }: NavbarProps) => {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Navbar styling:
+  // Mobile: 
+  // - Top: Fixed, Transparent (unless scrolled or menu open), Transition
+  // - Icon: White (unless scrolled or menu open, then Dark that matched white bg)
+  // Desktop: Sticky, White, Shadow (as before)
+  
+  const navClasses = `
+    transition-all duration-300 w-full z-50 top-0
+    md:sticky md:bg-white md:shadow-lg
+    ${isMenuOpen ? 'fixed bg-white' : scrolled ? 'fixed bg-white shadow-lg' : 'fixed bg-transparent shadow-none'}
+  `
+
+  const iconColorClass = (isMenuOpen || scrolled) ? 'text-gray-700' : 'text-white'
+
   return (
-    <nav className="bg-white shadow-lg fixed w-full z-50 top-0">
+    <nav className={navClasses}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <div className="flex items-center space-x-2">
+        <div className="flex justify-end md:justify-between items-center py-4 mr-6">
+          <div className="hidden md:flex items-center space-x-2">
             <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
               <BookOpenIcon className="text-white w-6 h-6" />
             </div>
@@ -32,7 +57,7 @@ export const Navbar = ({ isMenuOpen, setIsMenuOpen }: NavbarProps) => {
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+            {isMenuOpen ? <XIcon className={`w-6 h-6 ${iconColorClass}`} /> : <MenuIcon className={`w-6 h-6 ${iconColorClass}`} />}
           </button>
         </div>
 

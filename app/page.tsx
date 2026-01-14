@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Navbar, Hero, About, Results, FoundersMessage, Team, Testimonials, Contact, Footer } from './components/sections'
+import { Navbar, HeroCarousel, About, Results, FoundersMessage, Team, Testimonials, Contact, Footer } from './components/sections'
 import { UsersIcon, AwardIcon, BookOpenIcon, StarIcon } from './components/icons'
 import { AboutItem, Statistic, TeamMember, Testimonial, VisibilityState } from './components/types'
 
@@ -129,7 +129,7 @@ export default function Home() {
   return (
     <>
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <Hero />
+      <HeroCarousel />
       <About isVisible={isVisible.about || false} aboutItems={aboutItems} />
       <Results isVisible={isVisible.results || false} statistics={statistics} />
       <FoundersMessage isVisible={isVisible.team || false} />
