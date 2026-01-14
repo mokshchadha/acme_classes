@@ -4,11 +4,24 @@ import { useState, useEffect } from 'react'
 import { Navbar, HeroCarousel, About, Results, FoundersMessage, Team, Testimonials, Contact, Footer } from './components/sections'
 import { UsersIcon, AwardIcon, BookOpenIcon, StarIcon } from './components/icons'
 import { AboutItem, Statistic, TeamMember, Testimonial, VisibilityState } from './components/types'
+import { AlertDialog } from './components/ui/AlertDialog'
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const [currentTestimonial, setCurrentTestimonial] = useState<number>(0)
   const [isVisible, setIsVisible] = useState<VisibilityState>({})
+  
+  const [alertConfig, setAlertConfig] = useState<{
+    isOpen: boolean
+    title: string
+    message: string
+    type: 'success' | 'error'
+  }>({
+    isOpen: false,
+    title: '',
+    message: '',
+    type: 'success'
+  })
 
   // Sample testimonial data with YouTube video IDs
   const testimonials: Testimonial[] = [
@@ -38,7 +51,7 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
     const formData = new FormData(e.target as HTMLFormElement)
-    const data: { [key: string]: string } = Object.fromEntries(formData) as { [key: string]: string }
+    const data = Object.fromEntries(formData.entries())
     
     try {
       const response = await fetch('/api/contact', {
@@ -48,16 +61,28 @@ export default function Home() {
         },
         body: JSON.stringify(data),
       })
+
+      const result = await response.json()
       
-      if (response.ok) {
-        alert('Message sent successfully!')
+      if (result.success) {
+        setAlertConfig({
+          isOpen: true,
+          title: 'Message Sent!',
+          message: 'We have received your message and will get back to you shortly.',
+          type: 'success'
+        })
         ;(e.target as HTMLFormElement).reset()
       } else {
-        alert('Failed to send message. Please try again.')
+        throw new Error(result.message)
       }
     } catch (error) {
       console.error('Error:', error)
-      alert('An error occurred. Please try again.')
+      setAlertConfig({
+        isOpen: true,
+        title: 'Error',
+        message: 'Failed to send message. Please try again.',
+        type: 'error'
+      })
     }
   }
 
@@ -141,6 +166,14 @@ export default function Home() {
       />
       <Contact isVisible={isVisible.contact || false} handleSubmit={handleSubmit} />
       <Footer />
+
+      <AlertDialog
+        isOpen={alertConfig.isOpen}
+        onClose={() => setAlertConfig(prev => ({ ...prev, isOpen: false }))}
+        title={alertConfig.title}
+        message={alertConfig.message}
+        type={alertConfig.type}
+      />
     </>
   )
 }

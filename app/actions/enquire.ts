@@ -1,7 +1,6 @@
 'use server'
 
-const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN
-const CHAT_ID = process.env.TELEGRAM_CHAT_ID
+import { sendTelegramMessage } from '../lib/telegram'
 
 export async function submitEnquiry(formData: FormData) {
   const name = formData.get('name')
@@ -20,29 +19,5 @@ export async function submitEnquiry(formData: FormData) {
 📋 *Enquiry Type*: ${type}
   `
 
-  try {
-    const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: message,
-        parse_mode: 'Markdown',
-      }),
-    })
-
-    const data = await response.json()
-
-    if (!response.ok) {
-      console.error('Telegram API Error:', data)
-      return { success: false, message: 'Failed to send enquiry' }
-    }
-
-    return { success: true, message: 'Enquiry sent successfully!' }
-  } catch (error) {
-    console.error('Submission Error:', error)
-    return { success: false, message: 'Failed to connect to server' }
-  }
+  return await sendTelegramMessage(message)
 }
