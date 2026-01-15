@@ -101,7 +101,7 @@ export const HeroCarousel = () => {
           }}
           className={`absolute inset-0 bg-gradient-to-br ${slides[current].bgGradient} flex items-center`}
         >
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-[100px] md:mt-0">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-[100px] md:mt-2">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Text Content */}
               <div className="text-white space-y-8">
