@@ -14,12 +14,12 @@ const slides = [
     title: 'JEE Advanced Champions',
     description: 'Our students dominated JEE Advanced 2025 with stellar All India Ranks.',
     students: [
-      { name: 'Arnav', rank: 'AIR 903', image: '/2025/JEE/arnav_air_903.jpg' },
-      { name: 'Dhyey', rank: 'AIR 1569', image: '/2025/JEE/dhyey_air_1569.jpeg' },
-      { name: 'Dhyey', rank: 'AIR 5448', image: '/2025/JEE/dhyey_air_5448.png' },
+      { name: 'Arnav', rank: 'AIR 903', college: 'IIT Bombay (M.E.)', image: '/2025/JEE/arnav_air_903.jpg' },
+      { name: 'Dhyey', rank: 'AIR 1569', college: 'IIT', image: '/2025/JEE/dhyey_air_1569.jpeg' },
+      { name: 'Dhyey', rank: 'AIR 5448', college: 'IIT Gandhinagar (E.C.)', image: '/2025/JEE/dhyey_air_5448.png' },
     ],
     bgGradient: 'from-blue-900 via-indigo-900 to-slate-900'
-  },
+  } as const,
   {
     id: 2,
     type: 'NEET',
@@ -27,12 +27,12 @@ const slides = [
     title: 'NEET Result Superstars',
     description: 'Outstanding performance in NEET 2025. Shaping the doctors of tomorrow.',
     students: [
-      { name: 'Kratavya', rank: '535 / 720', image: '/2025/NEET/kratavya_535.webp' },
-      { name: 'Rushil', rank: '528 / 720', image: '/2025/NEET/rushil_528.jpeg' },
-      { name: 'Simran', rank: '519 / 720', image: '/2025/NEET/simran_519.jpeg' },
+      { name: 'Kratavya', rank: '535 / 720', college: 'M.P. Shah (GMC)', image: '/2025/NEET/kratavya_535.webp' },
+      { name: 'Rushil', rank: '528 / 720', college: 'Bhavnagar (GMC)', image: '/2025/NEET/rushil_528.jpeg' },
+      { name: 'Simran', rank: '519 / 720', college: 'RPGMC-Tanda', image: '/2025/NEET/simran_519.jpeg' },
     ],
     bgGradient: 'from-emerald-900 via-teal-900 to-slate-900'
-  },
+  } as const,
   {
     id: 3,
     type: 'DISCOUNT',
@@ -189,6 +189,9 @@ export const HeroCarousel = () => {
                           <div className="absolute bottom-3 left-3 right-3 text-white">
                             <p className="font-semibold text-xs md:text-sm text-gray-300 mb-1 truncate">{student.name}</p>
                             <p className="text-orange-400 font-black text-lg md:text-3xl leading-none drop-shadow-lg">{student.rank}</p>
+                            {'college' in student && (
+                              <p className="text-[10px] md:text-xs text-blue-300 font-medium mt-1 truncate uppercase tracking-wider">{student.college}</p>
+                            )}
                           </div>
                         </div>
                       </motion.div>
