@@ -27,24 +27,27 @@ export default function Home() {
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      name: "Priya Sharma",
-      course: "NEET 2024",
-      videoId: "dQw4w9WgXcQ",
-      thumbnail: "/testimonial.jpg"
+      name: "JEE",
+      course: "",
+      image: "/gallery/JEE/jee_a1_batch.png"
     },
     {
       id: 2,
-      name: "Rahul Kumar",
-      course: "JEE Main 2024",
-      videoId: "dQw4w9WgXcQ",
-      thumbnail: "/testimonial2.jpg"
+      name: "JEE",
+      course: "",
+      image: "/gallery/JEE/jee_a2_batch.png"
     },
     {
       id: 3,
-      name: "Ankit Singh",
-      course: "NDA 2023",
-      videoId: "dQw4w9WgXcQ",
-      thumbnail: "/testimonial3.jpg"
+      name: "NEET",
+      course: "",
+      image: "/gallery/NEET/a1_batch.png"
+    },
+    {
+      id: 4,
+      name: "NEET",
+      course: "",
+      image: "/gallery/NEET/a2_batch.png"
     }
   ]
 
@@ -124,10 +127,10 @@ export default function Home() {
   ]
 
   const statistics: Statistic[] = [
-    { number: 150, label: "IIT Selections", icon: <AwardIcon className="w-8 h-8" /> },
-    { number: 300, label: "IIIT/NIT Selections", icon: <StarIcon className="w-8 h-8" /> },
+    { number: 350, label: "IIT/NIT Selections", icon: <AwardIcon className="w-8 h-8" /> },
+    { number: 150, label: "NEET Selections", icon: <StarIcon className="w-8 h-8" /> },
     { number: 500, label: "NEET Qualified", icon: <UsersIcon className="w-8 h-8" /> },
-    { number: 200, label: "NDA/NTSE Success", icon: <BookOpenIcon className="w-8 h-8" /> }
+    { number: 100, label: "NDA/NTSE Success", icon: <BookOpenIcon className="w-8 h-8" /> }
   ]
 
   const teamMembers: TeamMember[] = [

@@ -4,8 +4,7 @@ export interface Testimonial {
   id: number;
   name: string;
   course: string;
-  videoId: string;
-  thumbnail: string;
+  image: string;
 }
 
 export interface VisibilityState {
