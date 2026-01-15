@@ -50,11 +50,13 @@ export const HeroCarousel = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
+    if (isModalOpen) return
+
     const timer = setInterval(() => {
       nextSlide()
     }, 6000)
     return () => clearInterval(timer)
-  }, [current])
+  }, [current, isModalOpen])
 
   const nextSlide = () => {
     setDirection(1)
@@ -144,7 +146,6 @@ export const HeroCarousel = () => {
                     Get Brochure
                   </a>
                 </motion.div>
-                <EnquireModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
                 {/* Social Links */}
                 <motion.div 
@@ -186,8 +187,8 @@ export const HeroCarousel = () => {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                           <div className="absolute bottom-3 left-3 right-3 text-white">
-                            <p className="font-bold text-sm md:text-lg truncate">{student.name}</p>
-                            <p className="text-orange-400 font-mono text-[10px] md:text-xs">{student.rank}</p>
+                            <p className="font-semibold text-xs md:text-sm text-gray-300 mb-1 truncate">{student.name}</p>
+                            <p className="text-orange-400 font-black text-xl md:text-3xl leading-none drop-shadow-lg">{student.rank}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -245,6 +246,8 @@ export const HeroCarousel = () => {
           />
         ))}
       </div>
+
+      <EnquireModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   )
 }
