@@ -169,7 +169,7 @@ export const HeroCarousel = () => {
               {/* Visual Content */}
               <div className="relative">
                 {slides[current].students ? (
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  <div className={`grid ${current < 2 ? 'grid-cols-3' : 'grid-cols-2'} sm:grid-cols-3 gap-4`}>
                     {slides[current].students.map((student, idx) => (
                       <motion.div
                         key={student.name}
@@ -188,7 +188,7 @@ export const HeroCarousel = () => {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                           <div className="absolute bottom-3 left-3 right-3 text-white">
                             <p className="font-semibold text-xs md:text-sm text-gray-300 mb-1 truncate">{student.name}</p>
-                            <p className="text-orange-400 font-black text-xl md:text-3xl leading-none drop-shadow-lg">{student.rank}</p>
+                            <p className="text-orange-400 font-black text-lg md:text-3xl leading-none drop-shadow-lg">{student.rank}</p>
                           </div>
                         </div>
                       </motion.div>
