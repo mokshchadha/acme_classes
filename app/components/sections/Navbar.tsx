@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { MenuIcon, XIcon, BookOpenIcon } from '../icons'
+import Image from 'next/image'
+import { MenuIcon, XIcon } from '../icons'
 
 interface NavbarProps {
   isMenuOpen: boolean
@@ -37,8 +38,14 @@ export const Navbar = ({ isMenuOpen, setIsMenuOpen }: NavbarProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-end md:justify-between items-center py-4 mr-6">
           <div className="hidden md:flex items-center space-x-2">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <BookOpenIcon className="text-white w-6 h-6" />
+            <div className="w-14 h-14 flex items-center justify-center overflow-hidden">
+              <Image 
+                src="/favicon.ico" 
+                alt="Acme Logo" 
+                width={56} 
+                height={56} 
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-2xl font-bold text-blue-600">Acme Coaching Classes</span>
           </div>
