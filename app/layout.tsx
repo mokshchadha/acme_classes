@@ -13,8 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Acme Coaching Classes",
-  description: "Acme Coaching Classes | Hamirpur | Himachal Pradesh",
+  title: "ACME Classes | Best NEET & JEE Coaching in Hamirpur, Himachal Pradesh",
+  description: "ACME Classes is the premier coaching academy in Hamirpur, Himachal Pradesh, specializing in NEET and JEE preparation. With a decade of excellence and a proven track record, we help students achieve their medical and engineering dreams.",
+  keywords: "NEET coaching Hamirpur, JEE coaching Himachal Pradesh, ACME Classes Hamirpur, Best coaching for NEET JEE, ACME coaching academy, engineering entrance exam preparation, medical entrance exam coaching, Hamirpur coaching center",
+  openGraph: {
+    title: "ACME Classes - Transforming Aspirations into Success",
+    description: "Leading NEET and JEE coaching in Hamirpur, Himachal Pradesh. 10+ years of excellence.",
+    siteName: "ACME Classes",
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
